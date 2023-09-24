@@ -177,7 +177,7 @@ const Index = () => {
     },
     {
       type: "radio",
-      select:"multiple",
+      select:"multi",
       style: {
         display: "grid",
         gridGap:"3px",
