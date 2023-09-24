@@ -9,20 +9,20 @@ const checkboxSlice = createSlice({
   initialState,
   reducers: {
     setCheckboxData: (state, { payload }) => {
-      if (/\b(multiple)\b/.test(payload.selectType)) {
-        state.checkBoxData = [...state.checkBoxData, payload];
-      } else if (
-        state?.checkBoxData?.some((item) => /\b(radio)\b/.test(item.type))
+      const isMultiple = /\b(multiple)\b/.test(payload.selectType);
+      const isRadio = /\b(radio)\b/.test(payload.type);
+      if (
+        isMultiple ||
+        !isRadio ||
+        !state.checkBoxData.some(
+          (item) => isRadio && item.type === payload.type
+        )
       ) {
-        if (/\b(radio)\b/.test(payload.type)) {
-          state.checkBoxData = state?.checkBoxData?.map((item) => {
-            return item.type == payload.type ? payload : item;
-          });
-        } else {
-          state.checkBoxData = [...state.checkBoxData, payload];
-        }
-      } else {
         state.checkBoxData = [...state.checkBoxData, payload];
+      } else {
+        state.checkBoxData = state.checkBoxData.map((item) =>
+          item.type === payload.type ? payload : item
+        );
       }
     },
     removeDouble: (state, action) => {
