@@ -15,13 +15,9 @@ const checkboxSlice = createSlice({
         state?.checkBoxData?.some((item) => /\b(radio)\b/.test(item.type))
       ) {
         if (/\b(radio)\b/.test(payload.type)) {
-          let data = state?.checkBoxData?.map((item) => {
-            if (item.type == payload.type) {
-              return payload;
-            }
-            return item;
+          state.checkBoxData = state?.checkBoxData?.map((item) => {
+            return item.type == payload.type ? payload : item;
           });
-          state.checkBoxData = data;
         } else {
           state.checkBoxData = [...state.checkBoxData, payload];
         }
