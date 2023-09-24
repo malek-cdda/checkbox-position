@@ -1,7 +1,10 @@
+import { typeDataCheck } from "@/hooks/typeCheck";
 import Image from "next/image";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 const CheckBtn = ({ data }) => {
+  console.log(data);
   return (
     <div style={data?.style}>
       {data?.data?.map((item, index) => (
@@ -38,11 +41,11 @@ const Item = ({ item }) => {
     };
   }
   let activeBg = {};
-  if (singleActive.name) {
-    const { backgroundColor } = singleActive?.style?.checkmarkStyle;
-    activeBg = { backgroundColor: backgroundColor[0] };
+  const checked = useSelector((state) => state.checkBoxData.checkBoxData);
+  let content;
+  if (checked?.some((items) => items.name == item.name)) {
+    activeBg = { backgroundColor: "red" };
   }
-  console.log(singleActive);
   return (
     <label style={containerStyle}>
       <Image
@@ -58,11 +61,11 @@ const Item = ({ item }) => {
       </div>
       <input
         type={item.type}
-        // checked={item.name == singleActive.name}
-        onChange={() => setSingleActive(item)}
+        onChange={() => typeDataCheck(item)}
         style={inputStyle}
       />
-      {item.name == singleActive.name ? (
+      {content}
+      {checked.some((items) => items.name == item.name) ? (
         <span
           style={{
             ...checkmarkStyle,
