@@ -18,6 +18,7 @@ export default CheckBtn;
 const Item = ({ item }) => {
   const [singleActive, setSingleActive] = useState({});
   let {
+    position,
     containerStyle,
     inputStyle,
     checkmarkStyle,
@@ -27,12 +28,15 @@ const Item = ({ item }) => {
   const { value } = item?.style?.checkmarkStyle;
 
   let positions = {};
+  console.log(position[value]);
   if (value == "top-right") {
     positions = { top: "0", right: "0", transform: "translate(0, 0)" };
   } else if (value == "top-left") {
     positions = { top: "0", left: "0", transform: "translate(0, 0)" };
   } else if (value == "bottom-left") {
-    positions = { top: "0", left: "0", transform: "translate(0, 0)" };
+    positions = { bottom: "0%", left: "0", transform: "translate(0, 0)" };
+  } else if (value == "bottom-right") {
+    positions = { bottom: "0%", right: "0", transform: "translate(0, 0)" };
   } else if (value == "center") {
     positions = {
       top: "50%",
@@ -47,7 +51,7 @@ const Item = ({ item }) => {
     activeBg = { backgroundColor: "red" };
   }
   return (
-    <label style={containerStyle}>
+    <label className="relative" style={containerStyle}>
       <Image
         src={item?.img}
         width="100"
@@ -69,11 +73,10 @@ const Item = ({ item }) => {
         <span
           style={{
             ...checkmarkStyle,
-            ...positions,
+            ...position[value],
             ...checkmarkHoverStyle,
             ...activeBg,
-          }}
-        >
+          }}>
           {singleActive.name}
           <span style={checkmarkAfterStyle}></span>
         </span>
@@ -81,10 +84,9 @@ const Item = ({ item }) => {
         <span
           style={{
             ...checkmarkStyle,
-            ...positions,
+            ...position[value],
             ...checkmarkHoverStyle,
-          }}
-        >
+          }}>
           <span style={checkmarkAfterStyle}></span>
         </span>
       )}

@@ -21,6 +21,7 @@ const Item = ({ item, data }) => {
   const check = useSelector((state) => state.checkBoxData.checkBoxData);
 
   let {
+    position,
     containerStyle,
     inputStyle,
     checkmarkStyle,
@@ -30,13 +31,17 @@ const Item = ({ item, data }) => {
 
   const { value } = checkmarkStyle;
 
+  console.log(value);
+  console.log(position[value]);
   let positions = {};
   if (value == "top-right") {
     positions = { top: "0", right: "0", transform: "translate(0, 0)" };
   } else if (value == "top-left") {
     positions = { top: "0", left: "0", transform: "translate(0, 0)" };
   } else if (value == "bottom-left") {
-    positions = { top: "0", left: "0", transform: "translate(0, 0)" };
+    positions = { bottom: "0%", left: "0", transform: "translate(0, 0)" };
+  } else if (value == "bottom-right") {
+    positions = { bottom: "0%", right: "0", transform: "translate(0, 0)" };
   } else if (value == "center") {
     positions = {
       top: "50%",
@@ -50,7 +55,7 @@ const Item = ({ item, data }) => {
     activeBg = { backgroundColor: "red" };
   }
   return (
-    <label style={containerStyle}>
+    <label style={containerStyle} className="border-2 bg-green-900">
       <Image
         src={item?.img}
         width="100"
@@ -74,21 +79,19 @@ const Item = ({ item, data }) => {
         <span
           style={{
             ...checkmarkStyle,
-            ...positions,
+            ...position[value],
             ...checkmarkHoverStyle,
             ...activeBg,
-          }}
-        >
+          }}>
           <span style={checkmarkAfterStyle}></span>
         </span>
       ) : (
         <span
           style={{
             ...checkmarkStyle,
-            ...positions,
+            ...position[value],
             ...checkmarkHoverStyle,
-          }}
-        >
+          }}>
           <span style={checkmarkAfterStyle}></span>
         </span>
       )}
