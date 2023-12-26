@@ -9,8 +9,11 @@ const checkboxSlice = createSlice({
   initialState,
   reducers: {
     setCheckboxData: (state, { payload }) => {
+      // multiple check or not check condition here
       const isMultiple = /\b(multiple)\b/.test(payload.selectType);
+      // only multiple work in radio button
       const isRadio = /\b(radio)\b/.test(payload.type);
+
       if (
         isMultiple ||
         !isRadio ||
@@ -25,6 +28,7 @@ const checkboxSlice = createSlice({
         );
       }
     },
+
     removeDouble: (state, action) => {
       state.checkBoxData = action.payload;
     },

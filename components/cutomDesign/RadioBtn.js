@@ -10,16 +10,16 @@ const RadioBtn = ({ data }) => {
   return (
     <div style={data?.style}>
       {data?.data?.map((item, index) => (
-        <Item item={item} data={data} key={index} />
+        <RadioItem item={item} data={data} key={index} />
       ))}
     </div>
   );
 };
 export default RadioBtn;
 
-const Item = ({ item, data }) => {
+const RadioItem = ({ item, data }) => {
   const check = useSelector((state) => state.checkBoxData.checkBoxData);
-
+  //  destructure the style  property
   let {
     position,
     containerStyle,
@@ -28,29 +28,10 @@ const Item = ({ item, data }) => {
     checkmarkAfterStyle,
     checkmarkHoverStyle,
   } = item?.style;
-
+  //  value distructure from checkmarkStyle for using checkbox position
   const { value } = checkmarkStyle;
-
-  console.log(value);
-  console.log(position[value]);
-  let positions = {};
-  if (value == "top-right") {
-    positions = { top: "0", right: "0", transform: "translate(0, 0)" };
-  } else if (value == "top-left") {
-    positions = { top: "0", left: "0", transform: "translate(0, 0)" };
-  } else if (value == "bottom-left") {
-    positions = { bottom: "0%", left: "0", transform: "translate(0, 0)" };
-  } else if (value == "bottom-right") {
-    positions = { bottom: "0%", right: "0", transform: "translate(0, 0)" };
-  } else if (value == "center") {
-    positions = {
-      top: "50%",
-      left: "50%",
-      transform: "translate(-50%, -50%)",
-    };
-  }
   let activeBg = {};
-
+  // selcted item background set color
   if (check?.some((items) => items.name == item.name)) {
     activeBg = { backgroundColor: "red" };
   }
@@ -63,18 +44,15 @@ const Item = ({ item, data }) => {
         alt="loading"
         className="w-full"
       />
-      <div>
-        <p>{item?.type}</p>
-        <p>{item?.description}</p>
-      </div>
+
       <input
         type={item.type}
-        // checked={item.name == singleActive.name}
         onClick={(e) => {
           typeDataCheck({ ...item, selectType: data.select });
         }}
         style={inputStyle}
       />
+      {/* selcted item background set color  */}
       {check.some((items) => items.name == item.name) ? (
         <span
           style={{

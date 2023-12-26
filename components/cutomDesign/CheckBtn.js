@@ -8,14 +8,14 @@ const CheckBtn = ({ data }) => {
   return (
     <div style={data?.style}>
       {data?.data?.map((item, index) => (
-        <Item item={item} key={index} />
+        <CheckBoxItem item={item} key={index} />
       ))}
     </div>
   );
 };
 export default CheckBtn;
 
-const Item = ({ item }) => {
+const CheckBoxItem = ({ item }) => {
   const [singleActive, setSingleActive] = useState({});
   let {
     position,
@@ -27,26 +27,9 @@ const Item = ({ item }) => {
   } = item?.style;
   const { value } = item?.style?.checkmarkStyle;
 
-  let positions = {};
-  console.log(position[value]);
-  if (value == "top-right") {
-    positions = { top: "0", right: "0", transform: "translate(0, 0)" };
-  } else if (value == "top-left") {
-    positions = { top: "0", left: "0", transform: "translate(0, 0)" };
-  } else if (value == "bottom-left") {
-    positions = { bottom: "0%", left: "0", transform: "translate(0, 0)" };
-  } else if (value == "bottom-right") {
-    positions = { bottom: "0%", right: "0", transform: "translate(0, 0)" };
-  } else if (value == "center") {
-    positions = {
-      top: "50%",
-      left: "50%",
-      transform: "translate(-50%, -50%)",
-    };
-  }
   let activeBg = {};
   const checked = useSelector((state) => state.checkBoxData.checkBoxData);
-  let content;
+  //  selected item background set color
   if (checked?.some((items) => items.name == item.name)) {
     activeBg = { backgroundColor: "red" };
   }
@@ -68,7 +51,7 @@ const Item = ({ item }) => {
         onChange={() => typeDataCheck(item)}
         style={inputStyle}
       />
-      {content}
+      {/* selcted item background set color  */}
       {checked.some((items) => items.name == item.name) ? (
         <span
           style={{

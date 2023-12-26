@@ -426,7 +426,7 @@ const Index = () => {
     },
     {
       type: "radio",
-      select: "multi",
+      select: "multipl",
       style: {
         display: "grid",
         gridGap: "3px",
