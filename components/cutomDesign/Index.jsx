@@ -13,7 +13,7 @@ const Index = () => {
       data: [
         {
           name: "checkbox-1",
-          value: "checkbox-2",
+          value: "checkbox-1",
           type: "checkbox",
           img: "/blackhole.jpg",
           style: {
@@ -28,6 +28,21 @@ const Index = () => {
                 top: "50%",
                 left: "50%",
                 transform: "translate(-50%, -50%)",
+              },
+              bottom_left: {
+                bottom: "0%",
+                left: "0",
+                transform: "translate(0, 0)",
+              },
+              top_left: {
+                top: "0%",
+                left: "0",
+                transform: "translate(0, 0)",
+              },
+              top_right: {
+                top: "0%",
+                right: "0",
+                transform: "translate(0, 0)",
               },
             },
             containerStyle: {
@@ -51,7 +66,7 @@ const Index = () => {
 
             checkmarkStyle: {
               position: "absolute",
-              value: "center",
+              value: "top_left",
               height: "40px",
               width: "40px",
               backgroundColor: ["green", "red"],
@@ -82,12 +97,114 @@ const Index = () => {
           name: "checkbox-2",
           value: "checkbox-2",
           type: "checkbox",
-          img: "/world.jpg",
+          img: "/blackhole.jpg",
           style: {
             position: {
               bottom_right: {
                 value: "bottom-right",
                 bottom: "0%",
+                right: "0",
+                transform: "translate(0, 0)",
+              },
+              center: {
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+              },
+              bottom_left: {
+                bottom: "0%",
+                left: "0",
+                transform: "translate(0, 0)",
+              },
+              top_left: {
+                top: "0%",
+                left: "0",
+                transform: "translate(0, 0)",
+              },
+              top_right: {
+                top: "0%",
+                right: "0",
+                transform: "translate(0, 0)",
+              },
+            },
+            containerStyle: {
+              display: "block",
+              position: "relative",
+              padding: "5px 5px",
+              marginBottom: "12px",
+              cursor: "pointer",
+              fontSize: "22px",
+              userSelect: "none",
+              border: "4px solid red",
+            },
+
+            inputStyle: {
+              position: "absolute",
+              opacity: "0",
+              cursor: "pointer",
+              height: "0",
+              width: "0",
+            },
+
+            checkmarkStyle: {
+              position: "absolute",
+              value: "top_right",
+              height: "40px",
+              width: "40px",
+              backgroundColor: ["green", "red"],
+              borderRadius: "50%",
+              border: "2px black solid",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            },
+
+            checkmarkHoverStyle: {
+              backgroundColor: "#ccc",
+            },
+
+            checkmarkAfterStyle: {
+              content: "''",
+              position: "absolute",
+              display: "block",
+              width: "10px",
+              height: "15px",
+              border: " solid rgb(204, 204, 204)",
+              borderWidth: " 0 5px 5px 0",
+              transform: " rotate(45deg)",
+            },
+          },
+        },
+        {
+          name: "checkbox-3",
+          value: "checkbox-2",
+          type: "checkbox",
+          img: "/blackhole.jpg",
+          style: {
+            position: {
+              bottom_right: {
+                value: "bottom-right",
+                bottom: "0%",
+                right: "0",
+                transform: "translate(0, 0)",
+              },
+              center: {
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+              },
+              bottom_left: {
+                bottom: "0%",
+                left: "0",
+                transform: "translate(0, 0)",
+              },
+              top_left: {
+                top: "0%",
+                left: "0",
+                transform: "translate(0, 0)",
+              },
+              top_right: {
+                top: "0%",
                 right: "0",
                 transform: "translate(0, 0)",
               },
@@ -141,7 +258,7 @@ const Index = () => {
           },
         },
         {
-          name: "checkbox-3",
+          name: "checkbox-4",
           value: "checkbox-2",
           type: "checkbox",
           img: "/blackhole.jpg",
@@ -150,6 +267,26 @@ const Index = () => {
               bottom_right: {
                 value: "bottom-right",
                 bottom: "0%",
+                right: "0",
+                transform: "translate(0, 0)",
+              },
+              center: {
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+              },
+              bottom_left: {
+                bottom: "0%",
+                left: "0",
+                transform: "translate(0, 0)",
+              },
+              top_left: {
+                top: "0%",
+                left: "0",
+                transform: "translate(0, 0)",
+              },
+              top_right: {
+                top: "0%",
                 right: "0",
                 transform: "translate(0, 0)",
               },
@@ -175,7 +312,7 @@ const Index = () => {
 
             checkmarkStyle: {
               position: "absolute",
-              value: "bottom-left",
+              value: "bottom_left",
               height: "40px",
               width: "40px",
               backgroundColor: ["green", "red"],
@@ -203,7 +340,7 @@ const Index = () => {
           },
         },
         {
-          name: "checkbox-3",
+          name: "checkbox-5",
           value: "checkbox-2",
           type: "checkbox",
           img: "/blackhole.jpg",
@@ -212,6 +349,26 @@ const Index = () => {
               bottom_right: {
                 value: "bottom-right",
                 bottom: "0%",
+                right: "0",
+                transform: "translate(0, 0)",
+              },
+              center: {
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+              },
+              bottom_left: {
+                bottom: "0%",
+                left: "0",
+                transform: "translate(0, 0)",
+              },
+              top_left: {
+                top: "0%",
+                left: "0",
+                transform: "translate(0, 0)",
+              },
+              top_right: {
+                top: "0%",
                 right: "0",
                 transform: "translate(0, 0)",
               },
@@ -237,69 +394,8 @@ const Index = () => {
 
             checkmarkStyle: {
               position: "absolute",
+
               value: "center",
-              height: "40px",
-              width: "40px",
-              backgroundColor: ["green", "red"],
-              borderRadius: "50%",
-              border: "2px black solid",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            },
-
-            checkmarkHoverStyle: {
-              backgroundColor: "#ccc",
-            },
-
-            checkmarkAfterStyle: {
-              content: "''",
-              position: "absolute",
-              display: "block",
-              width: "10px",
-              height: "15px",
-              border: " solid rgb(204, 204, 204)",
-              borderWidth: " 0 5px 5px 0",
-              transform: " rotate(45deg)",
-            },
-          },
-        },
-        {
-          name: "checkbox-3",
-          value: "checkbox-2",
-          type: "checkbox",
-          img: "/blackhole.jpg",
-          style: {
-            position: {
-              bottom_right: {
-                value: "bottom-right",
-                bottom: "0%",
-                right: "0",
-                transform: "translate(0, 0)",
-              },
-            },
-            containerStyle: {
-              display: "block",
-              position: "relative",
-              padding: "5px 5px",
-              marginBottom: "12px",
-              cursor: "pointer",
-              fontSize: "22px",
-              userSelect: "none",
-              border: "4px solid red",
-            },
-
-            inputStyle: {
-              position: "absolute",
-              opacity: "0",
-              cursor: "pointer",
-              height: "0",
-              width: "0",
-            },
-
-            checkmarkStyle: {
-              position: "absolute",
-              value: "bottom-right",
               height: "40px",
               width: "40px",
               backgroundColor: ["green", "red"],
@@ -350,6 +446,26 @@ const Index = () => {
                 right: "0",
                 transform: "translate(0, 0)",
               },
+              center: {
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+              },
+              bottom_left: {
+                bottom: "0%",
+                left: "0",
+                transform: "translate(0, 0)",
+              },
+              top_left: {
+                top: "0%",
+                left: "0",
+                transform: "translate(0, 0)",
+              },
+              top_right: {
+                top: "0%",
+                right: "0",
+                transform: "translate(0, 0)",
+              },
             },
             containerStyle: {
               display: "flex",
@@ -374,7 +490,7 @@ const Index = () => {
 
             checkmarkStyle: {
               position: "absolute",
-              value: "top-right",
+              value: "top_right",
               height: "45px",
               width: "45px",
               backgroundColor: ["green", "red"],
@@ -415,6 +531,26 @@ const Index = () => {
                 right: "0",
                 transform: "translate(0, 0)",
               },
+              center: {
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+              },
+              bottom_left: {
+                bottom: "0%",
+                left: "0",
+                transform: "translate(0, 0)",
+              },
+              top_left: {
+                top: "0%",
+                left: "0",
+                transform: "translate(0, 0)",
+              },
+              top_right: {
+                top: "0%",
+                right: "0",
+                transform: "translate(0, 0)",
+              },
             },
             containerStyle: {
               display: "flex",
@@ -439,7 +575,7 @@ const Index = () => {
 
             checkmarkStyle: {
               position: "absolute",
-              value: "center",
+              value: "top_left",
               height: "45px",
               width: "45px",
               backgroundColor: ["green", "red"],
@@ -477,6 +613,111 @@ const Index = () => {
               bottom_right: {
                 value: "bottom-right",
                 bottom: "0%",
+                right: "0",
+                transform: "translate(0, 0)",
+              },
+              center: {
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+              },
+              bottom_left: {
+                bottom: "0%",
+                left: "0",
+                transform: "translate(0, 0)",
+              },
+              top_left: {
+                top: "0%",
+                left: "0",
+                transform: "translate(0, 0)",
+              },
+              top_right: {
+                top: "0%",
+                right: "0",
+                transform: "translate(0, 0)",
+              },
+            },
+            containerStyle: {
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              position: "relative",
+              padding: "5px 5px",
+              marginBottom: "12px",
+              cursor: "pointer",
+              fontSize: "22px",
+              userSelect: "none",
+              border: "4px solid red",
+            },
+
+            inputStyle: {
+              position: "absolute",
+              opacity: "0",
+              cursor: "pointer",
+              height: "0",
+              width: "0",
+            },
+
+            checkmarkStyle: {
+              position: "absolute",
+              value: "bottom_left",
+              height: "45px",
+              width: "45px",
+              backgroundColor: ["green", "red"],
+              borderRadius: "50%",
+              border: "2px black solid",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            },
+
+            checkmarkHoverStyle: {
+              backgroundColor: "#ccc",
+            },
+
+            checkmarkAfterStyle: {
+              content: "''",
+              position: "absolute",
+              display: "block",
+              width: "15px",
+              height: "15px",
+              border: " solid rgb(204, 204, 204)",
+              borderWidth: " 5px 5px 5px 5px",
+              borderRadius: "50%",
+              backgroundColor: "rgb(204, 204, 204)",
+            },
+          },
+        },
+        {
+          name: "radio-4",
+          value: "radio-2",
+          type: "radio",
+          img: "/blackhole.jpg",
+          style: {
+            position: {
+              bottom_right: {
+                value: "bottom-right",
+                bottom: "0%",
+                right: "0",
+                transform: "translate(0, 0)",
+              },
+              center: {
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+              },
+              bottom_left: {
+                bottom: "0%",
+                left: "0",
+                transform: "translate(0, 0)",
+              },
+              top_left: {
+                top: "0%",
+                left: "0",
+                transform: "translate(0, 0)",
+              },
+              top_right: {
+                top: "0%",
                 right: "0",
                 transform: "translate(0, 0)",
               },
@@ -533,7 +774,7 @@ const Index = () => {
           },
         },
         {
-          name: "radio-3",
+          name: "radio-5",
           value: "radio-2",
           type: "radio",
           img: "/blackhole.jpg",
@@ -542,6 +783,26 @@ const Index = () => {
               bottom_right: {
                 value: "bottom-right",
                 bottom: "0%",
+                right: "0",
+                transform: "translate(0, 0)",
+              },
+              center: {
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+              },
+              bottom_left: {
+                bottom: "0%",
+                left: "0",
+                transform: "translate(0, 0)",
+              },
+              top_left: {
+                top: "0%",
+                left: "0",
+                transform: "translate(0, 0)",
+              },
+              top_right: {
+                top: "0%",
                 right: "0",
                 transform: "translate(0, 0)",
               },
@@ -569,72 +830,7 @@ const Index = () => {
 
             checkmarkStyle: {
               position: "absolute",
-              value: "bottom-left",
-              height: "45px",
-              width: "45px",
-              backgroundColor: ["green", "red"],
-              borderRadius: "50%",
-              border: "2px black solid",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            },
-
-            checkmarkHoverStyle: {
-              backgroundColor: "#ccc",
-            },
-
-            checkmarkAfterStyle: {
-              content: "''",
-              position: "absolute",
-              display: "block",
-              width: "15px",
-              height: "15px",
-              border: " solid rgb(204, 204, 204)",
-              borderWidth: " 5px 5px 5px 5px",
-              borderRadius: "50%",
-              backgroundColor: "rgb(204, 204, 204)",
-            },
-          },
-        },
-        {
-          name: "radio-3",
-          value: "radio-2",
-          type: "radio",
-          img: "/blackhole.jpg",
-          style: {
-            position: {
-              bottom_right: {
-                value: "bottom-right",
-                bottom: "0%",
-                right: "0",
-                transform: "translate(0, 0)",
-              },
-            },
-            containerStyle: {
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              position: "relative",
-              padding: "5px 5px",
-              marginBottom: "12px",
-              cursor: "pointer",
-              fontSize: "22px",
-              userSelect: "none",
-              border: "4px solid red",
-            },
-
-            inputStyle: {
-              position: "absolute",
-              opacity: "0",
-              cursor: "pointer",
-              height: "0",
-              width: "0",
-            },
-
-            checkmarkStyle: {
-              position: "absolute",
-              value: "bottom-right",
+              value: "center",
               height: "45px",
               width: "45px",
               backgroundColor: ["green", "red"],
